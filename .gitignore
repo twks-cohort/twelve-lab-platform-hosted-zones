@@ -1,3 +1,4 @@
 multiaccount.auto.tfvars.json
 credentials
 .terraform*
+.idea
