@@ -3,7 +3,7 @@
 # define a provider in the account where this subdomain will be managed
 provider "aws" {
   alias  = "subdomain_dev_cdicohorts_twelve"
-  region = "us-east-1"
+  region = "ap-southeast-2"
   assume_role {
     role_arn     = "arn:aws:iam::${var.nonprod_account_id}:role/${var.assume_role}"
     session_name = "twelve-lab-platform-hosted-zones"
