@@ -16,7 +16,7 @@ parameters:
   context:
     description: circleci context for all jobs
     type: string
-    default: cohorts
+    default: cohorts-global
   shell-options:
     description: shell options for all jobs
     type: string
