@@ -11,7 +11,7 @@ provider "aws" {
 }
 
 # zone id for the top-level-zone
-data "aws_route53_zone" "domain_cdicohorts_twelve" {
+data "aws_route53_zone" "zone_id_cdicohorts_twelve" {
   provider = aws.domain_cdicohorts_twelve
   name     = local.domain_cdicohorts_twelve
 }
