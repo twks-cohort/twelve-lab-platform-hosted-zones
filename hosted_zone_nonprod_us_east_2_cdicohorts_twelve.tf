@@ -17,7 +17,7 @@ module "subdomain_nonprod_us_east_2_cdicohorts_twelve" {
   create  = true
 
   providers = {
-    aws = aws.subdomain_sandbox_us_east_2_cdicohorts_twelve
+    aws = aws.subdomain_nonprod_us_east_2_cdicohorts_twelve
   }
 
   zones = {
