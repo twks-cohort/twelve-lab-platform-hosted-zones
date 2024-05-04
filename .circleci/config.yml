@@ -12,11 +12,11 @@ parameters:
   terraform-version:
     description: terraform version for all jobs
     type: string
-    default: "1.2.2"
+    default: "1.3.3"
   context:
     description: circleci context for all jobs
     type: string
-    default: twdps-core-labs-team
+    default: cohorts
   shell-options:
     description: shell options for all jobs
     type: string
@@ -84,14 +84,10 @@ workflows:
                 acct: multiaccount
           after-terraform:
             - do/circle-deploy
-            - do/slack-webhook:
-                message: lab-platform-hosted-zones release
-                webhook-url: $LAB_EVENTS_CHANNEL_WEBHOOK
             - run:
                 name: test hosted zones 
                 command: |
                   bash scripts/hosted_zone_test.sh multiaccount nonprod
-                  bash scripts/hosted_zone_test.sh multiaccount prod
           filters: *on-tag-main
 
   # generate-release-notes:

@@ -50,9 +50,9 @@ module "subdomain_zone_delegation_dev_cohorts_two" {
       name            = "dev"
       type            = "NS"
       ttl             = 172800
-      zone_id         = data.aws_route53_zone.zone_id_cdicohorts_two.id
+      zone_id         = data.aws_route53_zone.zone_id_cdicohorts_twelve.id
       allow_overwrite = true
-      records         = lookup(module.subdomain_zone_delegation_dev_cohorts_two.route53_zone_name_servers,"dev.${local.domain_cdicohorts_twelve}")
+      records         = lookup(module.subdomain_dev_cohorts_twelve.route53_zone_name_servers,"dev.${local.domain_cdicohorts_twelve}")
     }
   ]
 
