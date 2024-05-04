@@ -83,7 +83,6 @@ workflows:
             - set-environment:
                 acct: multiaccount
           after-terraform:
-            - do/circle-deploy
             - run:
                 name: test hosted zones 
                 command: |

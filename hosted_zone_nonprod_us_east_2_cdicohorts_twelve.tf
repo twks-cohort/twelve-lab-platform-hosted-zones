@@ -21,7 +21,7 @@ module "subdomain_nonprod_us_east_2_cdicohorts_twelve" {
   }
 
   zones = {
-    "sandbox-us-east-2.${local.domain_cdicohorts_twelve}" = {
+    "nonprod-us-east-2.${local.domain_cdicohorts_twelve}" = {
       tags = {
         cluster = "nonprod"
       }
@@ -34,7 +34,7 @@ module "subdomain_nonprod_us_east_2_cdicohorts_twelve" {
 }
 
 # Create a zone delegation in the top level domain for this subdomain
-module "subdomain_zone_delegation_sandbox_us_east_2_cdicohorts_twelve" {
+module "subdomain_zone_delegation_nonprod_us_east_2_cdicohorts_twelve" {
   source  = "terraform-aws-modules/route53/aws//modules/records"
   version = "2.0.0"
   create  = true
@@ -47,12 +47,12 @@ module "subdomain_zone_delegation_sandbox_us_east_2_cdicohorts_twelve" {
   zone_name = local.domain_cdicohorts_twelve
   records = [
     {
-      name            = "sandbox-us-east-2"
+      name            = "nonprod-us-east-2"
       type            = "NS"
       ttl             = 172800
       zone_id         = data.aws_route53_zone.zone_id_cdicohorts_twelve.id
       allow_overwrite = true
-      records         = lookup(module.subdomain_nonprod_us_east_2_cdicohorts_twelve.route53_zone_name_servers,"sandbox-us-east-2.${local.domain_cdicohorts_twelve}")
+      records         = lookup(module.subdomain_nonprod_us_east_2_cdicohorts_twelve.route53_zone_name_servers,"nonprod-us-east-2.${local.domain_cdicohorts_twelve}")
     }
   ]
 
