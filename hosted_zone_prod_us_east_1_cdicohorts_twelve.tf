@@ -2,7 +2,7 @@
 
 # define a provider in the account where this subdomain will be managed
 provider "aws" {
-  alias  = "subdomain_prod_us_east_1_twdps_digital"
+  alias  = "subdomain_nonprod_us_east_1_cdicohorts_twelve"
   region = "us-east-1"
   assume_role {
     role_arn     = "arn:aws:iam::${var.nonprod_account_id}:role/${var.assume_role}"
