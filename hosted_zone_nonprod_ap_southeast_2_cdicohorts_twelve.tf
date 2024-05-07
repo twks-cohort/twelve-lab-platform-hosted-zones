@@ -21,7 +21,7 @@ module "subdomain_nonprod_ap_southeast_2_cdicohorts_twelve" {
   }
 
   zones = {
-    "nonprod-us-east-2.${local.domain_cdicohorts_twelve}" = {
+    "nonprod-ap-southeast-2.${local.domain_cdicohorts_twelve}" = {
       tags = {
         cluster = "nonprod"
       }
@@ -47,7 +47,7 @@ module "subdomain_zone_delegation_nonprod_ap_southeast_2_cdicohorts_twelve" {
   zone_name = local.domain_cdicohorts_twelve
   records = [
     {
-      name            = "nonprod-us-east-2"
+      name            = "nonprod-ap-southeast-2"
       type            = "NS"
       ttl             = 172800
       zone_id         = data.aws_route53_zone.zone_id_cdicohorts_twelve.id

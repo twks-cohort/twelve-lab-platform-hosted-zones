@@ -4,7 +4,7 @@ locals {
 
 provider "aws" {
   alias  = "domain_cdicohorts_twelve"
-  region = "us-east-2"
+  region = "ap-southeast-2"
   assume_role {
     role_arn = "arn:aws:iam::${var.nonprod_account_id}:role/${var.assume_role}"
   }
