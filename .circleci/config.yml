@@ -19,7 +19,7 @@ parameters:
   executor-image:
     description: image to use for terraform runs
     type: string
-    default: twdps/circleci-infra-aws:alpine-edge
+    default: twdps/circleci-infra-aws:alpine-6.0.0
   shell-options:
     description: shell options for all jobs
     type: string
